@@ -18,7 +18,7 @@ const Title: React.FC<TitleProps> = ({ text,subHeading, subtitle,textColor,title
       <small className={`${titleBorder}`}></small>
       </span>
       {subtitle && (
-        <p className={`text-2xl md:text-4xl text-gray-600 font-poppins ${textColor} mt-2`}>
+        <p className={`${textColor ? textColor : "text-2xl"} ${textColor ? textColor : "md:text-4xl"}  font-poppins ${textColor ? textColor : "text-gray-600"} mt-2`}>
           {subtitle}
         </p>
       )}

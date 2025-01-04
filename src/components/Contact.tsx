@@ -38,10 +38,10 @@ const ContactPage: React.FC = () => {
 
   return (
     <section
-      className="py-16 bg-cover bg-center"
+      className="pt-20 bg-cover bg-center"
       style={{ backgroundImage:img }}
     >
-      <Container>
+      <Container className="bg-white py-16">
         <Title text="Get in Touch" textColor="pb-8" titleBorder="heading_titleBorder"/>
         <p className="md:text-lg text-gray-600 ">
           Contact us for a great photography session & beautiful captured
@@ -88,7 +88,7 @@ const ContactPage: React.FC = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-white rounded-lg border p-6 mt-6  lg:mt-0">
+          <div className="bg-white shadow-lg rounded-lg  p-6 mt-6  lg:mt-0">
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="sm:col-span-1">
@@ -180,7 +180,7 @@ const ContactPage: React.FC = () => {
 
       {/* Google Map */}
       <div className="mt-16">
-        <Container>
+        <Container className="bg-white py-16">
         <Title text="Find Studio"  textColor="pb-8" titleBorder="heading_titleBorder"/>
           <div className="w-full h-96 rounded-lg overflow-hidden">
             <iframe

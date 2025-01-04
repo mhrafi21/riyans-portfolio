@@ -47,8 +47,8 @@ const Portfolio: React.FC = () => {
   const isInView = useInView(galleryRef, { once: true, amount: 0.1 });
 
   return (
-    <div className="py-16">
-      <Container>
+    <div className="pt-20">
+      <Container className="bg-white py-16">
         <Title
           text={"Latest Works"}
           textColor="pb-8"

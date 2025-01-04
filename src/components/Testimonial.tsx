@@ -75,8 +75,8 @@ const Testimonial: React.FC = () => {
   ];
 
   return (
-    <section className=" py-16">
-      <Container>
+    <section className=" pt-20">
+      <Container className="bg-white py-16">
         <Title text="Clients Reviews" textColor="pb-8" titleBorder="heading_titleBorder"/>
         <p className=" md:text-lg pb-8 text-gray-600 md:w-[60%]">We value our clients' feedback and are proud to share their experiences. Here's what they have to say about our services </p>
         <Swiper
@@ -109,7 +109,7 @@ const Testimonial: React.FC = () => {
         >
           {reviews?.map((review, index) => (
             <SwiperSlide key={index}>
-              <div className="bg-white rounded-lg border p-6 hover:shadow-lg transition-shadow duration-300">
+              <div className="bg-[#f5f5f5] rounded-lg border p-6 hover:shadow-lg transition-shadow duration-300">
               <div className="flex justify-between">
               <div className="flex items-start flex-col space-y-4">
                   <img

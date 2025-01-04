@@ -7,9 +7,9 @@ import { Link } from "react-router";
 
 const AboutMe: React.FC = () => {
   return (
-    <section className="py-16">
+    <section className="pt-20 overflow-hidden">
       {/* Background Pattern */}
-      <Container>
+      <Container className="bg-white pt-16">
        
           <Title text="About me" textColor="pb-10" titleBorder="heading_titleBorder"/>
         
@@ -17,7 +17,7 @@ const AboutMe: React.FC = () => {
       <div className="relative">
         <div className="absolute inset-0 pointer-events-none"></div>
         {/* Container */}
-        <Container>
+        <Container className="bg-white pb-16">
           <div className="relative">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               {/* Image Section */}

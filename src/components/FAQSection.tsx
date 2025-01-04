@@ -44,8 +44,8 @@ const FAQSection: React.FC = () => {
   };
 
   return (
-    <div className="py-16">
-      <Container>
+    <div className="pt-20">
+      <Container className="bg-white py-16">
         
          <Title text="FAQ" textColor="pb-8" titleBorder="heading_titleBorder" />
        
