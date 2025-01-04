@@ -11,7 +11,7 @@ const Navbar: React.FC = () => {
 
   return (
     <header className="sticky top-0 h-[80px] bg-white shadow z-50">
-      <nav className=" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 h-full flex items-center justify-between">
+      <nav className=" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-0 py-3 h-full flex items-center justify-between">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}

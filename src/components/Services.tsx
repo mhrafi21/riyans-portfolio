@@ -1,8 +1,7 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+
 import { Pagination, Navigation } from 'swiper/modules';
 import imgServices from "../assets/images/porfile.jpg"
 import Title from './Title';
@@ -51,9 +50,10 @@ const Services: React.FC = () => {
                   className="w-full md:w-1/2 h-64 object-cover"
                 />
                 <div className="p-6 md:w-1/2">
-                  <h3 className="text-2xl font-semibold mb-4">{service.title}</h3>
-                  <p className="text-gray-600 mb-6">{service.description}</p>
-                 
+                 <Title subtitle={service.title} />
+                 <p className="mt-2 md:text-lg text-gray-600">
+                {service.description}
+                </p>
                 </div>
               </div>
             </SwiperSlide>

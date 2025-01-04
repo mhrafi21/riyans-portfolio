@@ -7,19 +7,20 @@ import {motion} from "framer-motion";
 const Hero: React.FC = () => {
   return (
     <div
-      className="relative bg-cover bg-center h-[80vh] md:h-screen  flex items-center justify-center"
+      className="relative bg-cover bg-center h-[80vh] md:h-screen"
       style={{
         backgroundImage: `url(${heroImg})`,
       }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+      <div className="absolute inset-0 bg-black opacity-60"></div>
 
       {/* Content */}
-      <div className="relative z-20">
-        <div>
-          <Container>
-            <motion.div
+      <div className="absolute inset-0 flex items-center justify-center text-center z-20">
+        <div >
+          <div>
+              <Container>
+              <motion.div
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
@@ -27,7 +28,7 @@ const Hero: React.FC = () => {
               <div className="pb-4">
                 <Title
                   subtitle="Photography"
-                  textColor="text-indigo-500 text-2xl md:text-3xl"
+                  textColor="text-indigo-500 text-center text-2xl md:text-3xl"
                 />
               </div>
             </motion.div>
@@ -47,7 +48,7 @@ const Hero: React.FC = () => {
               </p>
 
               {/* Call to Action */}
-              <div className="mt-8 flex space-x-4">
+              <div className="mt-8 flex space-x-4 items-center justify-center">
                 <Link
                   to={"../portfolio"}
                   className="px-6 py-3 bg-indigo-600 rounded-lg text-white font-medium hover:bg-indigo-700 transition"
@@ -56,7 +57,8 @@ const Hero: React.FC = () => {
                 </Link>
               </div>
             </motion.div>
-          </Container>
+              </Container>
+          </div>
         </div>
       </div>
     </div>
