@@ -21,8 +21,40 @@ body{
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  background-color: #f5f5f5;
+
 }
+
+@layer components {
+  .bgDark{
+    @apply bg-black;
+  }
+  .textGray900{
+    @apply text-gray-900;
+  }
+  .textGray800{
+    @apply text-gray-800;
+  }
+  .textGray700{
+    @apply text-gray-700;
+  }
+  .textGray600{
+    @apply text-gray-600;
+  }
+  .textGray500{
+    @apply text-gray-500;
+  }
+  .textGray400{
+    @apply text-gray-400;
+  }
+  .textGray300{
+    @apply text-gray-300;
+  }
+  .textGray200{
+    @apply text-gray-200;
+  }
+}
+
+
 
 .heading_border::before{
   content: '';

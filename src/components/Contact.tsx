@@ -41,9 +41,9 @@ const ContactPage: React.FC = () => {
       className="pt-20 bg-cover bg-center"
       style={{ backgroundImage:img }}
     >
-      <Container className="bg-white py-16">
+      <Container>
         <Title text="Get in Touch" textColor="pb-8" titleBorder="heading_titleBorder"/>
-        <p className="md:text-lg text-gray-600 ">
+        <p className="md:text-lg textGray600 dark:textGray200">
           Contact us for a great photography session & beautiful captured
           moments
         </p>
@@ -56,7 +56,7 @@ const ContactPage: React.FC = () => {
                   <FaEnvelope />
                 </span>
                 <div className="flex flex-col">
-                  <strong className="text-xl">Email</strong>
+                  <strong className="text-xl textGray700 dark:textGray200">Email</strong>
                 <span className="text-gray-500 font-medium">
                   example@domain.com
                 </span>
@@ -67,7 +67,7 @@ const ContactPage: React.FC = () => {
                   <FaMapMarkerAlt />
                 </span>
                 <div className="flex flex-col">
-                  <strong className="text-xl">Phone Number</strong>
+                  <strong className="text-xl textGray700 dark:textGray200">Phone Number</strong>
                 <span className="text-gray-500 font-medium">
                   +880 1932112552
                 </span>
@@ -78,7 +78,7 @@ const ContactPage: React.FC = () => {
                   <FaPhone />
                 </span>
                 <div className="flex flex-col group">
-                  <strong className="text-xl">Location</strong>
+                  <strong className="text-xl textGray700 dark:textGray200">Location</strong>
                 <span className="text-gray-500 font-medium">
                   Malibaugh, Dhaka
                 </span>
@@ -88,18 +88,18 @@ const ContactPage: React.FC = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-white shadow-lg rounded-lg  p-6 mt-6  lg:mt-0">
+          <div className=" border rounded-lg  p-6 mt-6  lg:mt-0">
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="sm:col-span-1">
-                  <label htmlFor="name" className="block md:text-lg text-gray-700">
+                  <label htmlFor="name" className="block textGray600 dark:text-gray-200 md:text-lg">
                     Your Name
                   </label>
                   <input
                     type="text"
                     id="name"
                     {...register("name", { required: "Name is required." })}
-                    className="mt-2 px-4 py-3 w-full border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                    className="mt-2 px-4 py-3 w-full border dark:bgDark border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none"
                   />
                   {errors.name && (
                     <p className="text-red-500 md:text-lg mt-1">
@@ -108,7 +108,7 @@ const ContactPage: React.FC = () => {
                   )}
                 </div>
                 <div className="sm:col-span-1">
-                  <label htmlFor="email" className="block md:text-lg text-gray-700">
+                  <label htmlFor="email" className="block md:text-lg dark:text-gray-200">
                     Your Email
                   </label>
                   <input
@@ -121,7 +121,7 @@ const ContactPage: React.FC = () => {
                         message: "Invalid email address.",
                       },
                     })}
-                    className="mt-2 px-4 py-3 w-full border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                    className="mt-2 px-4 py-3 w-full border border-gray-300 dark:bgDark rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none"
                   />
                   {errors.email && (
                     <p className="text-red-500 md:text-lg mt-1">
@@ -131,14 +131,14 @@ const ContactPage: React.FC = () => {
                 </div>
               </div>
               <div>
-                <label htmlFor="subject" className="block md:text-lg text-gray-700">
+                <label htmlFor="subject" className="block dark:text-gray-200 md:text-lg ">
                   Subject
                 </label>
                 <input
                   type="text"
                   id="subject"
                   {...register("subject", { required: "Subject is required." })}
-                  className="mt-2 px-4 py-3 w-full border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                  className="mt-2 px-4 py-3 w-full border border-gray-300 dark:bgDark rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none"
                 />
                 {errors.subject && (
                   <p className="text-red-500 md:text-lg mt-1">
@@ -147,14 +147,14 @@ const ContactPage: React.FC = () => {
                 )}
               </div>
               <div>
-                <label htmlFor="message" className="block md:text-lg text-gray-700">
+                <label htmlFor="message" className="block dark:text-gray-200 md:text-lg ">
                   Message
                 </label>
                 <textarea
                   id="message"
                   {...register("message", { required: "Message is required." })}
                   rows={4}
-                  className="mt-2 px-4 py-3 w-full border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                  className="mt-2 px-4 py-3 w-full border border-gray-300 dark:bgDark dark:bgDark rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none"
                 ></textarea>
                 {errors.message && (
                   <p className="text-red-500 md:text-lg mt-1">
@@ -180,7 +180,7 @@ const ContactPage: React.FC = () => {
 
       {/* Google Map */}
       <div className="mt-16">
-        <Container className="bg-white py-16">
+        <Container>
         <Title text="Find Studio"  textColor="pb-8" titleBorder="heading_titleBorder"/>
           <div className="w-full h-96 rounded-lg overflow-hidden">
             <iframe

@@ -9,7 +9,7 @@ const AboutMe: React.FC = () => {
   return (
     <section className="pt-20 overflow-hidden">
       {/* Background Pattern */}
-      <Container className="bg-white pt-16">
+      <Container>
        
           <Title text="About me" textColor="pb-10" titleBorder="heading_titleBorder"/>
         
@@ -17,7 +17,7 @@ const AboutMe: React.FC = () => {
       <div className="relative">
         <div className="absolute inset-0 pointer-events-none"></div>
         {/* Container */}
-        <Container className="bg-white pb-16">
+        <Container className=" pb-16">
           <div className="relative">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               {/* Image Section */}
@@ -52,20 +52,20 @@ const AboutMe: React.FC = () => {
               </span>
              
               </div>
-                <p className="mt-4 md:text-lg text-gray-600">
+                <p className="mt-4 md:text-lg textGray600 dark:textGray400">
                   Capturing moments that tell stories is not just my passion—it’s
                   my way of life. With a keen eye for detail and a love for the
                   creative process, I specialize in portraits, weddings, and
                   nature photography.
                 </p>
-                <p className="mt-4 md:text-lg text-gray-600">
+                <p className="mt-4 md:text-lg textGray600 dark:textGray400">
                   Whether it’s the smile of a loved one, the beauty of a landscape,
                   or the fleeting moments of a wedding day, I believe every picture
                   holds a unique narrative waiting to be shared.
                 </p>
 
                 {/* Highlights */}
-                <ul className="mt-6 space-y-3">
+                <ul className="mt-6 space-y-3 textGray600 dark:textGray400">
                   <motion.li
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -74,7 +74,7 @@ const AboutMe: React.FC = () => {
                     className="flex items-center"
                   >
                     <span className="inline-block w-4 h-4 bg-indigo-600 rounded-full mr-3"></span>
-                    <span className="text-gray-700 font-medium">10+ Years of Experience</span>
+                    <span className=" font-medium">10+ Years of Experience</span>
                   </motion.li>
                   <motion.li
                     initial={{ opacity: 0, x: -20 }}
@@ -84,7 +84,7 @@ const AboutMe: React.FC = () => {
                     className="flex items-center"
                   >
                     <span className="inline-block w-4 h-4 bg-indigo-600 rounded-full mr-3"></span>
-                    <span className="text-gray-700 font-medium">Featured in National Geographic</span>
+                    <span className=" font-medium">Featured in National Geographic</span>
                   </motion.li>
                   <motion.li
                     initial={{ opacity: 0, x: -20 }}
@@ -94,7 +94,7 @@ const AboutMe: React.FC = () => {
                     className="flex items-center"
                   >
                     <span className="inline-block w-4 h-4 bg-indigo-600 rounded-full mr-3"></span>
-                    <span className="text-gray-700 font-medium">Specialized in Portraits & Weddings</span>
+                    <span className=" font-medium">Specialized in Portraits & Weddings</span>
                   </motion.li>
                 </ul>
 

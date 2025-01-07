@@ -32,8 +32,8 @@ const Services: React.FC = () => {
   ];
 
   return (
-    <section className=" pt-20">
-      <Container className='bg-white py-16'>
+    <section className="pt-20">
+      <Container>
       <Title text="Services" textColor="pb-10" titleBorder="heading_titleBorder"/>
         <Swiper
           spaceBetween={30}
@@ -51,7 +51,7 @@ const Services: React.FC = () => {
                 />
                 <div className="p-6 md:w-1/2">
                  <Title subtitle={service.title} />
-                 <p className="mt-2 md:text-lg text-gray-600">
+                 <p className="mt-2 md:text-lg textGray600 dark:textGray400 ">
                 {service.description}
                 </p>
                 </div>

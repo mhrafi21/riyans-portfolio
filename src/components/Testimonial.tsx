@@ -76,9 +76,9 @@ const Testimonial: React.FC = () => {
 
   return (
     <section className=" pt-20">
-      <Container className="bg-white py-16">
+      <Container>
         <Title text="Clients Reviews" textColor="pb-8" titleBorder="heading_titleBorder"/>
-        <p className=" md:text-lg pb-8 text-gray-600 md:w-[60%]">We value our clients' feedback and are proud to share their experiences. Here's what they have to say about our services </p>
+        <p className=" md:text-lg pb-8 textGray600 dark:textGray400 md:w-[60%]">We value our clients' feedback and are proud to share their experiences. Here's what they have to say about our services </p>
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
           spaceBetween={30}
@@ -109,7 +109,7 @@ const Testimonial: React.FC = () => {
         >
           {reviews?.map((review, index) => (
             <SwiperSlide key={index}>
-              <div className="bg-[#f5f5f5] rounded-lg border p-6 hover:shadow-lg transition-shadow duration-300">
+              <div className=" rounded-lg border p-6 hover:shadow-lg transition-shadow duration-300">
               <div className="flex justify-between">
               <div className="flex items-start flex-col space-y-4">
                   <img
@@ -118,7 +118,7 @@ const Testimonial: React.FC = () => {
                     className="w-12 h-12 rounded-full object-cover"
                   />
                   <div>
-                    <h3 className=" text-lg md:text-xl font-semibold text-gray-800">
+                    <h3 className=" text-lg md:text-xl font-semibold textGray800 dark:textGray300">
                       {review.name}
                     </h3>
                     <div className="flex items-center mt-2">

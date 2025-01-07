@@ -7,7 +7,7 @@ import { FaAngleRight, FaFacebook, FaTwitter, FaWhatsapp } from "react-icons/fa"
 const Footer: React.FC = () => {
   return (
     <footer className="pt-20">
-      <div className="bg-gray-900  text-white py-10">
+      <div className="bgDark text-white py-10">
       <Container>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About Section */}
@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
               subtitle="About Me"
               textColor="mb-4 text-lg md:text-xl text-gray-100 "
             />
-            <p className="text-gray-400 ">
+            <p className="textGray400 ">
               I’m a passionate photographer capturing moments that last forever.
               From intimate portraits to breathtaking landscapes, I bring
               stories to life through my lens.
@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
               subtitle="Quick Links"
               textColor="mb-4 text-lg md:text-xl text-gray-100"
             />
-            <ul className="text-gray-400 space-y-2">
+            <ul className="textGray400 space-y-2">
               <li className="hover:text-[#3730a3] flex items-center transition">
                 <span>
                   {" "}

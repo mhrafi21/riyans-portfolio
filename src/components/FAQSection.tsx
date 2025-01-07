@@ -45,7 +45,7 @@ const FAQSection: React.FC = () => {
 
   return (
     <div className="pt-20">
-      <Container className="bg-white py-16">
+      <Container>
         
          <Title text="FAQ" textColor="pb-8" titleBorder="heading_titleBorder" />
        
@@ -60,28 +60,28 @@ const FAQSection: React.FC = () => {
             >
               <button
                 onClick={() => handleToggle(index)}
-                className="w-full flex justify-between items-center p-4 bg-white hover:bg-gray-100 transition-all"
+                className="w-full flex justify-between items-center p-4  transition-all"
               >
-                <span className="text-lg font-medium text-gray-700">
+                <span className="text-lg font-medium textGray600 dark:textGray400 ">
                   {faq.question}
                 </span>
                 <motion.span
                   animate={{ rotate: activeIndex === index ? 180 : 0 }}
                   transition={{ duration: 0.3 }}
-                  className="text-gray-500"
+                  className=""
                 >
                   ▼
                 </motion.span>
               </button>
               {activeIndex === index && (
                 <motion.div
-                  className="p-4 bg-gray-100 text-gray-600"
+                  className="p-4 "
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: "auto", opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <p className="md:text-lg">{faq.answer}</p>
+                  <p className="md:text-lg textGray500 dark:textGray400">{faq.answer}</p>
                 </motion.div>
               )}
             </motion.div>
