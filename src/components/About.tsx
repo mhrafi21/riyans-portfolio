@@ -17,7 +17,7 @@ const AboutMe: React.FC = () => {
       <div className="relative">
         <div className="absolute inset-0 pointer-events-none"></div>
         {/* Container */}
-        <Container className=" pb-16">
+        <Container>
           <div className="relative">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               {/* Image Section */}
@@ -46,7 +46,7 @@ const AboutMe: React.FC = () => {
               <div >
               <Title subtitle={"Ashiqur Rahman Riyan"} />
               <span className="relative inline-block">
-              <Title subHeading={"Photogrpher & Videographer"} textColor="inline-block"/>
+              <Title subHeading={"Photographer & Videographer"} textColor="inline-block"/>
               <small className="heading_border">
               </small>
               </span>

@@ -45,7 +45,7 @@ const Portfolios: React.FC = () => {
 
   return (
     <div className="pt-20">
-      <Container className=" py-16">
+      <Container>
         <Title text={"Latest Works"} textColor="pb-8" titleBorder="heading_titleBorder"/>
         <p className=" mb-6 text-lg md:w-[60%]">
           Explore a collection of beautifully captured moments, showcasing the

@@ -8,7 +8,9 @@ const RootLayout: React.FC = () => {
     <div>
        <ScrollRestoration />
         <Navbar/> 
-        <Outlet />
+       <div className="mt-[80px]">
+       <Outlet />
+       </div>
         <Footer />
     </div>
   )
