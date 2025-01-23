@@ -1,23 +1,21 @@
 import React from "react";
-import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import InputField from "./form/InputField";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
 interface FormValues {
   email: string;
   password: string;
 }
 
-const Login: React.FC = () => {
+interface LoginProps {
+  isOpen?: boolean;
+  onClose?: () => void;
+}
+
+const Login: React.FC<LoginProps> = () => {
   const {
     register,
     handleSubmit,
@@ -29,52 +27,57 @@ const Login: React.FC = () => {
   };
 
   return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button variant="outline">Login</Button>
-      </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px] px-4">
-        <DialogHeader>
-          <DialogTitle>Edit profile</DialogTitle>
-          <DialogDescription>
-            Make changes to your profile here. Click save when you're done.
-          </DialogDescription>
-        </DialogHeader>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="grid gap-4 py-4">
+    <div className="min-h-screen flex items-center justify-center ">
+      <Card className="w-full max-w-md p-6 shadow-lg border border-gray-200">
+        <CardHeader>
+          <CardTitle className="text-center text-2xl font-semibold ">
+            Welcome Back
+          </CardTitle>
+          <p className="text-center text-gray-500">Sign in to your account</p>
+        </CardHeader>
+        <CardContent>
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
             <div>
-              <InputField
-                label="Email"
-                name="email"
-                register={register("email",
-                  {
-                    required: "Email is required"
-                  }
-                )}
+              <Label htmlFor="email">Email</Label>
+              <Input
+                id="email"
                 type="email"
                 placeholder="Enter your email"
-                error={errors.email}
+                {...register("email", { required: "Email is required" })}
+                className="mt-2"
               />
+              {errors.email && (
+                <p className="text-sm text-red-600 mt-1">{errors.email.message}</p>
+              )}
             </div>
-            <div >
-              <InputField
-                label="Password"
-                name="password"
+            <div>
+              <Label htmlFor="password">Password</Label>
+              <Input
+                id="password"
                 type="password"
-                register={register("password", {
-                  required: "Password is required",
-                })}
-                error={errors.password}
-                placeholder="Enter your Password"
+                placeholder="Enter your password"
+                {...register("password", { required: "Password is required" })}
+                className="mt-2"
               />
+              {errors.password && (
+                <p className="text-sm text-red-600 mt-1">{errors.password.message}</p>
+              )}
             </div>
-          </div>
-          <DialogFooter>
-            <Button type="submit">Login</Button>
-          </DialogFooter>
-        </form>
-      </DialogContent>
-    </Dialog>
+            <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+              Login
+            </Button>
+          </form>
+        </CardContent>
+        <CardFooter className="text-center">
+          <p className="text-sm text-gray-600">
+            Don't have an account?{" "}
+            <a href="#" className="text-blue-600 hover:underline">
+              Sign Up
+            </a>
+          </p>
+        </CardFooter>
+      </Card>
+    </div>
   );
 };
 

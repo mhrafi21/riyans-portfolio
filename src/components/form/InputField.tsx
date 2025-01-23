@@ -33,7 +33,7 @@ const InputField: React.FC<InputFieldProps> = ({
         type={type}
         {...register}
         placeholder={placeholder}
-        className=" mt-2 px-4 py-3 w-full border focus:border-indigo-500"
+        className=" mt-2 h-12 w-full border focus:border-indigo-500"
       />
       {error && <p className="text-red-500 mt-3">{error.message}</p>}
     </div>

@@ -32,6 +32,7 @@ const Navbar: React.FC = () => {
             "Portfolio",
             "Testimonial",
             "Contact",
+            "Login"
           ].map((item, index) => (
             <NavLink
             key={index}
@@ -48,7 +49,6 @@ const Navbar: React.FC = () => {
           ))}
           {/* Dropdown Menu */}
           <ModeToggle />
-          <Login />
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -109,6 +109,7 @@ const Navbar: React.FC = () => {
               "Portfolio",
               "Testimonial",
               "Contact",
+              "Login"
             ].map((item, index) => (
               <motion.li
                 key={index}
@@ -130,7 +131,7 @@ const Navbar: React.FC = () => {
               </motion.li>
             ))}
             <ModeToggle />
-            <Login />
+            
           </ul>
         </motion.div>
       )}
