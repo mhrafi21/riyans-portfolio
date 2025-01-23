@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Link, NavLink } from "react-router";
 import ModeToggle from "./ModeToogle";
+import Login from "./Login";
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -47,6 +48,7 @@ const Navbar: React.FC = () => {
           ))}
           {/* Dropdown Menu */}
           <ModeToggle />
+          <Login />
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -128,6 +130,7 @@ const Navbar: React.FC = () => {
               </motion.li>
             ))}
             <ModeToggle />
+            <Login />
           </ul>
         </motion.div>
       )}
