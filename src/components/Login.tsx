@@ -1,4 +1,5 @@
-import { Button } from "@/components/ui/button"
+import React from "react";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -7,11 +8,26 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-import { Input } from "./ui/input";
-import { Label } from "./ui/label";
+} from "@/components/ui/dialog";
+import InputField from "./form/InputField";
+import { SubmitHandler, useForm } from "react-hook-form";
 
-const Login = () => {
+interface FormValues {
+  email: string;
+  password: string;
+}
+
+const Login: React.FC = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormValues>();
+
+  const onSubmit: SubmitHandler<FormValues> = (data) => {
+    console.log(data);
+  };
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -24,26 +40,42 @@ const Login = () => {
             Make changes to your profile here. Click save when you're done.
           </DialogDescription>
         </DialogHeader>
-        <div className="grid gap-4 py-4">
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="name" className="text-right">
-              Name
-            </Label>
-            <Input id="name" value="Pedro Duarte" className="col-span-3" />
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="grid gap-4 py-4">
+            <div>
+              <InputField
+                label="Email"
+                name="email"
+                register={register("email",
+                  {
+                    required: "Email is required"
+                  }
+                )}
+                type="email"
+                placeholder="Enter your email"
+                error={errors.email}
+              />
+            </div>
+            <div >
+              <InputField
+                label="Password"
+                name="password"
+                type="password"
+                register={register("password", {
+                  required: "Password is required",
+                })}
+                error={errors.password}
+                placeholder="Enter your Password"
+              />
+            </div>
           </div>
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="username" className="text-right">
-              Username
-            </Label>
-            <Input id="username" value="@peduarte" className="col-span-3" />
-          </div>
-        </div>
-        <DialogFooter>
-          <Button type="submit">Login</Button>
-        </DialogFooter>
+          <DialogFooter>
+            <Button type="submit">Login</Button>
+          </DialogFooter>
+        </form>
       </DialogContent>
     </Dialog>
-  )
-}
+  );
+};
 
 export default Login;
