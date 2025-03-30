@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 const Hero: React.FC = () => {
   return (
     <div
-      className="relative bg-cover bg-center h-[80vh] md:h-screen"
+      className=" bg-cover bg-center h-full"
       style={{
         backgroundImage: `url(${heroImg})`,
       }}

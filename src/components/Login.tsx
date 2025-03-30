@@ -79,6 +79,6 @@ const Login: React.FC<LoginProps> = () => {
       </Card>
     </div>
   );
-};
+}
 
 export default Login;
