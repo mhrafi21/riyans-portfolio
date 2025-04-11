@@ -1,4 +1,5 @@
 import React from "react";
+import { CardTitle } from "./ui/card";
 
 interface TitleProps {
   text?: string;
@@ -12,20 +13,20 @@ const Title: React.FC<TitleProps> = ({ text,subHeading, subtitle,textColor,title
   return (
     <div className="text-start">
       <span className="relative inline-block">
-      <h1 className={`text-4xl md:text-6xl tracking-wider font-bold  font-poppins ${ textColor ? textColor : 'text-gray-800'}`}>
+      <CardTitle className={`text-4xl md:text-6xl tracking-wider font-bold  font-poppins ${ textColor ? textColor : 'text-gray-800'}`}>
         {text}
-      </h1>
+      </CardTitle>
       <small className={`${titleBorder}`}></small>
       </span>
       {subtitle && (
-        <p className={`${textColor ? textColor : "text-2xl"} ${textColor ? textColor : "md:text-4xl"}  font-poppins ${textColor ? textColor : "text-gray-600 dark:text-gray-300"} mt-2`}>
+        <CardTitle className={`${textColor ? textColor : "text-2xl"} ${textColor ? textColor : "md:text-4xl"}  font-poppins ${textColor ? textColor : "text-gray-600 dark:text-gray-300"} mt-2`}>
           {subtitle}
-        </p>
+        </CardTitle>
       )}
       {subHeading && (
-        <p className={`text-lg  tracking-tighter md:text-2xl text-gray-600 dark:text-gray-300  ${textColor} mt-2`}>
+        <CardTitle className={`text-lg  tracking-tighter md:text-2xl text-gray-600 dark:text-gray-300  ${textColor} mt-2`}>
           {subHeading}
-        </p>
+        </CardTitle>
       )}
     </div>
   );

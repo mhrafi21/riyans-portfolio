@@ -1,10 +1,9 @@
 import React from "react";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import Title from "./Title";
-import img from "../assets/images/img3.jpg"
-import { CardDescription, CardTitle } from "./ui/card";
+
 interface CardProps {
   name: string;
   price: string;
@@ -21,7 +20,7 @@ const photographyPackages: CardProps[] = [
     details: "Ideal for small events and portrait shoots.",
     images: 100,
     photographers: 1,
-    imageUrl: img
+    imageUrl: "https://via.placeholder.com/400"
   },
   {
     name: "Wedding Photography Package",
@@ -29,7 +28,7 @@ const photographyPackages: CardProps[] = [
     details: "Perfect for weddings with full-day coverage.",
     images: 500,
     photographers: 2,
-    imageUrl: img
+    imageUrl: "https://via.placeholder.com/400"
   },
   {
     name: "Premium Portrait Package",
@@ -37,7 +36,7 @@ const photographyPackages: CardProps[] = [
     details: "Studio or outdoor portrait sessions.",
     images: 150,
     photographers: 1,
-    imageUrl: img
+    imageUrl: "https://via.placeholder.com/400"
   },
   {
     name: "Event Photography Package",
@@ -45,7 +44,7 @@ const photographyPackages: CardProps[] = [
     details: "Best for corporate and social events.",
     images: 300,
     photographers: 2,
-    imageUrl: img
+    imageUrl: "https://via.placeholder.com/400"
   },
   {
     name: "Fashion Photography Package",
@@ -53,51 +52,50 @@ const photographyPackages: CardProps[] = [
     details: "Includes multiple outfits and locations.",
     images: 200,
     photographers: 2,
-    imageUrl: img
+    imageUrl: "https://via.placeholder.com/400"
   }
 ];
 
 const Card: React.FC<CardProps> = ({ name, price, details, images, photographers, imageUrl }) => {
   return (
-    <div className=" rounded-lg shadow-md p-4 text-center">
+    <div className="bg-white rounded-lg shadow-md p-4 text-center">
       <img src={imageUrl} alt={name} className="w-full h-40 object-cover rounded-lg mb-4" />
-      <CardTitle className='md:text-xl text-lg'>{name}</CardTitle>
-      <CardDescription className="">{details}</CardDescription>
+      <h3 className="text-lg font-semibold text-gray-800">{name}</h3>
+      <p className="text-gray-600 text-sm">{details}</p>
       <p className="text-indigo-600 font-bold mt-2">{price}</p>
       <p className="text-gray-500 text-sm">Images: {images} | Photographers: {photographers}</p>
     </div>
   );
 };
 
-const Services: React.FC = () => {
+const photographyPackage: React.FC = () => {
   return (
     <div className="container mx-auto px-4 py-10">
-      <Title text="Photograpy Packages" textColor="pb-8" titleBorder="heading_titleBorder" />
+      <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">Photography Packages</h2>
       <Swiper
-        modules={[Pagination, Autoplay, Navigation]}
+        modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={20}
         slidesPerView={1}
-        navigation
 
         autoplay={{ delay: 3000 }}
         breakpoints={{
-          320: {
-            slidesPerView: 1,
-            spaceBetween: 10,
-          },
-          640: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-          768: {
-            slidesPerView: 3,
-            spaceBetween: 30,
-          },
-          1024: {
-            slidesPerView: 4,
-            spaceBetween: 40,
-          },
-        }}
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+            1024: {
+              slidesPerView: 4,
+              spaceBetween: 40,
+            },
+          }}
       >
         {photographyPackages.map((pkg, index) => (
           <SwiperSlide key={index}>
@@ -105,10 +103,8 @@ const Services: React.FC = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-    
-  
     </div>
   );
 };
 
-export default Services;
+export default photographyPackage;

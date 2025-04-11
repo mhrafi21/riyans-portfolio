@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React from "react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Container from "./Container";
 import Title from "./Title";
 
@@ -9,8 +9,6 @@ interface FAQItem {
 }
 
 const FAQSection: React.FC = () => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-
   const faqs: FAQItem[] = [
     {
       question: "What types of photography and videography services do you offer?",
@@ -39,56 +37,24 @@ const FAQSection: React.FC = () => {
     },
   ];
 
-  const handleToggle = (index: number) => {
-    setActiveIndex(index === activeIndex ? null : index);
-  };
-
   return (
-    <div className="pt-20">
+    <section className="pt-20">
       <Container>
-        
-         <Title text="FAQ" textColor="pb-8" titleBorder="heading_titleBorder" />
-       
-        <div className="space-y-4">
-          { faqs && faqs?.map((faq, index) => (
-            <motion.div
-              key={index}
-              className="border border-gray-300 rounded-lg overflow-hidden"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: index * 0.1 }}
-            >
-              <button
-                onClick={() => handleToggle(index)}
-                className="w-full flex justify-between items-center p-4  transition-all"
-              >
-                <span className="text-lg font-medium textGray600 dark:textGray400 ">
-                  {faq.question}
-                </span>
-                <motion.span
-                  animate={{ rotate: activeIndex === index ? 180 : 0 }}
-                  transition={{ duration: 0.3 }}
-                  className=""
-                >
-                  ▼
-                </motion.span>
-              </button>
-              {activeIndex === index && (
-                <motion.div
-                  className="p-4 "
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <p className="md:text-lg textGray500 dark:textGray400">{faq.answer}</p>
-                </motion.div>
-              )}
-            </motion.div>
+        <Title text="FAQ" textColor="pb-8" titleBorder="heading_titleBorder" />
+        <Accordion type="single" collapsible className="w-full space-y-4">
+          {faqs.map((faq, index) => (
+            <AccordionItem key={index} value={`faq-${index}`} className="border rounded-lg">
+              <AccordionTrigger className="text-left text-lg font-medium px-4 py-3 dark:text-gray-300">
+                {faq.question}
+              </AccordionTrigger>
+              <AccordionContent className="px-4 pb-4 pt-1 text-gray-600 dark:text-gray-400 md:text-lg">
+                {faq.answer}
+              </AccordionContent>
+            </AccordionItem>
           ))}
-        </div>
+        </Accordion>
       </Container>
-    </div>
+    </section>
   );
 };
 

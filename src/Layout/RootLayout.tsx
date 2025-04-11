@@ -1,6 +1,7 @@
 import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 import React from 'react'
+import { Toaster } from "@/components/ui/sonner"
 import { Outlet, ScrollRestoration } from 'react-router'
 
 const RootLayout: React.FC = () => {
@@ -8,8 +9,9 @@ const RootLayout: React.FC = () => {
     <div>
        <ScrollRestoration />
         <Navbar/> 
-       <div className="mt-[80px]">
+       <div>
        <Outlet />
+       <Toaster />
        </div>
         <Footer />
     </div>

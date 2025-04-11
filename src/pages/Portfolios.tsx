@@ -1,9 +1,12 @@
 import React, { useState, useRef } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import portfolioImg from "../assets/images/hero.jpg";
-import pImg from "../assets/images/porfile.jpg";
 import Container from "@/components/Container";
 import Title from "@/components/Title";
+import img1 from "../assets/images/img1.jpg"
+import img2 from "../assets/images/img2.jpg"
+import img3 from "../assets/images/img3.jpg"
+import img4 from "../assets/images/img4.jpg"
 
 type Image = {
   src: string; // URL or path to the image
@@ -26,14 +29,14 @@ const Portfolios: React.FC = () => {
       { src: portfolioImg, caption: "Portrait " },
     ],
     weddings: [
-      { src: pImg, caption: "Wedding" },
-      { src: portfolioImg, caption: "Wedding" },
-      { src: portfolioImg, caption: "Wedding" },
+      { src: img1, caption: "Wedding" },
+      { src: img2, caption: "Wedding" },
+      { src: img3, caption: "Wedding" },
     ],
     landscapes: [
-      { src: portfolioImg, caption: "Landscape" },
-      { src: portfolioImg, caption: "Landscape" },
-      { src: pImg, caption: "Landscape" },
+      { src: img2, caption: "Landscape" },
+      { src: img4, caption: "Landscape" },
+      { src: img3, caption: "Landscape" },
     ],
   };
 
